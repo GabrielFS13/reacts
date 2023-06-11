@@ -1,0 +1,3 @@
+--comando para criar a estrutura base do projeto com Typescript *caso tenha yarn utilizar --use-npm* antes do ./ <- utilizado para criar a estrutura na raiz da pasta, 
+sem necessidade de criar uma outra pasta
+npx create-react-app --template typescript ./ 
