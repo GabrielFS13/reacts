@@ -8,14 +8,22 @@ interface Tarefas{
     completado: boolean,
     id: string
 }
-export default function Lista({tarefas} : {tarefas: Tarefas[]}) {
+interface ListaProps{
+    tarefas: Tarefas[],
+    selecionaTarefa: (tarefa: Tarefas) => void
+}
+export default function Lista({tarefas, selecionaTarefa} : ListaProps) {
     
     return (
         <aside className={style.listaTarefas}>
             <h2>Estudos do dia</h2>
             <ul>
-                {tarefas.map((tarefa, i) => (
-                    <Item {...tarefa} key = {i}/>
+                {tarefas.map((tarefa) => (
+                    <Item 
+                    {...tarefa}
+                     key = {tarefa.id}
+                     selecionaTarefa={selecionaTarefa}
+                     />
                 ))}
             </ul>
         </aside>
